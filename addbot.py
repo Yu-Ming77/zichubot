@@ -2,6 +2,7 @@ import discord
 import asyncio
 import datetime
 import random
+import os
 intents = discord.Intents.all()
 token = "Nzk0MDY5OTAwMDk2MTc2MTQ4.X-1dOQ.yBMhVk0zU-vPPp0NyY01dryV2dU"
 client = discord.Client()
@@ -55,6 +56,7 @@ async def on_message(message):
         await message.channel.purge(limit=number)
         await message.channel.send(f"{number}개의 메시지가 삭제되었습니다!")
 
-client.run(token)
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
 
 
