@@ -5,7 +5,7 @@ import random
 import os
 intents = discord.Intents.all()
 access_token = os.environ["BOT_TOKEN"]
-token = "access_token"
+token = (access_token)
 client = discord.Client()
 
 @client.event
