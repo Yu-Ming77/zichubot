@@ -24,7 +24,7 @@ async def on_message(message):
         embed.add_field(name = '유저 상태 불러와', value = '유저 상태 online, offline') 
         embed.add_field(name = '찌츄야 안녕', value = '안녕하세요!') 
         embed.add_field(name = '찌츄야 숫자 선택', value = '랜덤 1 ~ 10000') 
-        embed.add_field(name = '찌츄야 타이머', value = '10초 타이머') 
+        embed.add_field(name = '찌츄야 타이머', value = '(숫자 적기)초 타이머') 
         embed.add_field(name = '!청소', value = '관리자 이외에 사용 할 시 경고') 
         await message.channel.send(embed=embed)
 
@@ -49,7 +49,7 @@ async def on_message(message):
 
     if message.content == "찌츄야 타이머":
         await asyncio.sleep(1800)
-        await message.channel.send(f"{message.author.mention}님 1800초가 지났어요!")
+        await message.channel.send(f"{message.author.mention}님 (자신이 원하는 숫자)초가 지났어요!")
 
     if message.content.startswith("!청소"):
         number = int(message.content.split(" ")[1])
